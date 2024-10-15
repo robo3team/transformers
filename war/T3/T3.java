@@ -48,7 +48,6 @@ public class T3 extends Bot {
     @Override
     public void onHitBot(HitBotEvent e) {
         fire(3);
-        // 부딪혔을 때 아무 작업도 하지 않음
     }
 
     private void turnToFaceTarget(double x, double y) {
