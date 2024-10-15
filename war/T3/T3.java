@@ -11,7 +11,7 @@ public class T3 extends Bot {
     }
 
     T3() {
-        super(BotInfo.fromFile("T3bleBee.json"));
+        super(BotInfo.fromFile("T3.json"));
     }
 
     @Override
