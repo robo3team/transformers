@@ -17,9 +17,9 @@ public class BumbleBee extends Bot {
     @Override
     public void run() {
         // Set colors
-        setBodyColor(Color.fromHex("999")); // lighter gray
-        setTurretColor(Color.fromHex("888")); // gray
-        setRadarColor(Color.fromHex("666")); // dark gray
+        setBodyColor(Color.YELLOW); // lighter gray
+        setTurretColor(Color.BLACK); // gray
+        setRadarColor(Color.RED); // dark gray
 
         while (isRunning()) {
             turnLeft(5 * turnDirection); // 조금씩 회전
@@ -35,7 +35,9 @@ public class BumbleBee extends Bot {
         // 안전 거리 유지
         if (distance > safeDistance) {
             forward(distance - safeDistance); // 안전 거리로 이동
+            fire(3);
         } else {
+            fire(3);
             back(10); // 너무 가까우면 뒤로 물러남
         }
 
@@ -45,6 +47,7 @@ public class BumbleBee extends Bot {
 
     @Override
     public void onHitBot(HitBotEvent e) {
+        fire(3);
         // 부딪혔을 때 아무 작업도 하지 않음
     }
 
@@ -58,4 +61,3 @@ public class BumbleBee extends Bot {
         turnLeft(bearing);
     }
 }
-
